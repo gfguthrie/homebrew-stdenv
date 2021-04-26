@@ -13,8 +13,6 @@ class Yarn < Formula
     skip("1.x line is frozen and features/bugfixes only happen on 2.x")
   end
 
-  bottle :unneeded
-
   depends_on "node" => :optional # Make node optional so it's not installed by default & we get --with-node
   depends_on StdNodeRequirement => build.with?("node") # StdNodeRequirement looks for node in std environment
 
@@ -28,6 +26,7 @@ class Yarn < Formula
     (bin/"yarnpkg").write_env_script "#{libexec}/bin/yarn.js",
       PREFIX:            HOMEBREW_PREFIX,
       NPM_CONFIG_PYTHON: "/usr/bin/python"
+    inreplace "#{libexec}/lib/cli.js", "/usr/local", HOMEBREW_PREFIX
     inreplace "#{libexec}/package.json", '"installationMethod": "tar"', '"installationMethod": "homebrew"'
   end
 
