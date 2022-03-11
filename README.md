@@ -1,3 +1,6 @@
+# DEPRECATED
+With the arrival of [Corepack](https://nodejs.org/dist/latest/docs/api/corepack.html) I'm no longer installing yarn from Homebrew, and have no more need of this project. I think the stdenv concept is still useful & so this project is archived for you to fork &amp; modify to your needs.
+
 # homebrew-stdenv
 Tap of [Homebrew](https://github.com/Homebrew) formulae modified to use the standard environment &amp; look for non-Homebrew dependency fulfillment.
 
